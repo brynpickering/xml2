@@ -18,14 +18,18 @@
 */
 
 #include <stdio.h>
+#ifdef _WIN64
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
-#include <libxml/parser.h>
-#include <libxml/HTMLparser.h>
+#include <libxml2/libxml/parser.h>
+#include <libxml2/libxml/HTMLparser.h>
 
 struct node
 {
@@ -91,7 +95,7 @@ static void flush_content(void)
 		putchar('=');
 		do {
 			if (isspace(*begin)) {
-				do ++begin; 
+				do ++begin;
 				while (begin != end && isspace(*begin));
 				putchar(' ');
 			}

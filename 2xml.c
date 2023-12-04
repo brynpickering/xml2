@@ -20,16 +20,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifdef _WIN64
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <assert.h>
 #include <ctype.h>
 
-#include <libxml/HTMLparser.h>
+#include <libxml2/libxml/HTMLparser.h>
 
 int do_html;
 int in_tag = 0;
 
-struct node 
+struct node
 {
 	char *name;
 	struct node *child;
