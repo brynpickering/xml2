@@ -28,8 +28,8 @@
 #include <string.h>
 #include <ctype.h>
 
-#include <libxml2/libxml/parser.h>
-#include <libxml2/libxml/HTMLparser.h>
+#include <libxml/parser.h>
+#include <libxml/HTMLparser.h>
 
 struct node
 {

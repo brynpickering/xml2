@@ -28,7 +28,7 @@
 #include <assert.h>
 #include <ctype.h>
 
-#include <libxml2/libxml/HTMLparser.h>
+#include <libxml/HTMLparser.h>
 
 int do_html;
 int in_tag = 0;
